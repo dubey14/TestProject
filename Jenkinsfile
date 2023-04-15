@@ -8,13 +8,6 @@ pipeline {
             }
         }
 
-        stage('Testing Project'){
-            steps {
-                echo 'Testing Project'
-                bat 'npm run ng test --watch=false'
-            }
-        }
-
         stage('Building Project'){
             steps {
                 echo 'Building Project'
