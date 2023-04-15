@@ -11,7 +11,7 @@ pipeline {
         stage('Testing Project'){
             steps {
                 echo 'Testing Project'
-                bat 'npm run ng test --watch=false'
+                bat 'ng test --watch=false'
             }
         }
 
