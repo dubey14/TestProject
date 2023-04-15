@@ -14,5 +14,13 @@ pipeline {
                 bat 'npm run ng -- build'
             }
         }
+
+        stage('Deploy Project'){
+            steps {
+                echo 'Deploy Project'
+                bat 'xcopy /s /y "C:/Users/allsh/AppData/Local/Jenkins/.jenkins/workspace/TestPipeline/dist/test-project"
+                "C:/Users/allsh/OneDrive/Desktop/Release"'
+            }
+        }
     }
 }
