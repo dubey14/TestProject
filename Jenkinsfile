@@ -8,6 +8,13 @@ pipeline {
             }
         }
 
+        stage('Running Tests'){
+            steps {
+                echo 'Running Tests'
+                bat 'ng test'
+            }
+        }
+
         stage('Building Project'){
             steps {
                 echo 'Building Project'
