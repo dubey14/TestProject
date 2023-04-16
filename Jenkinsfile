@@ -29,5 +29,9 @@ pipeline {
             }
         }
 
+        stage('Email'){
+            mail bcc: '', body: 'Test body', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
+        }
+
     }
 }
