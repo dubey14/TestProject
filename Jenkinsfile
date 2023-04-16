@@ -3,6 +3,9 @@ pipeline {
     stages {
         stage('install dependecies'){
             steps {
+                script {
+                    FAILED_STAGE=env.STAGE_NAME
+                }
                 echo 'Installing Dependencies'
                 bat 'npm install'
             }
@@ -10,6 +13,9 @@ pipeline {
 
         stage('Testing Project'){
             steps {
+                script {
+                    FAILED_STAGE=env.STAGE_NAME
+                }
                 echo 'Testing Project'
                 bat 'ng test --watch=false'
             }
@@ -17,6 +23,9 @@ pipeline {
 
         stage('Building Project'){
             steps {
+                script {
+                    FAILED_STAGE=env.STAGE_NAME
+                }
                 echo 'Building Project'
                 bat 'npm run ng -- build'
             }
@@ -24,8 +33,17 @@ pipeline {
 
         stage('Deploy Project'){
             steps {
+                script {
+                    FAILED_STAGE=env.STAGE_NAME
+                }
                 echo 'Deploy Project'
                 bat 'xcopy /s /y "C:/Users/allsh/AppData/Local/Jenkins/.jenkins/workspace/TestPipeline/dist/test-project" "C:/Users/allsh/OneDrive/Desktop/Release"'
+            }
+        }
+
+        post {
+        failure {
+            echo "Failed stage name: ${FAILED_STAGE}"
             }
         }
 
