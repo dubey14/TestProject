@@ -41,19 +41,15 @@ pipeline {
             }
         }
 
-        
-
         stage('Email'){
-        post {
-        failure {
-            echo "Failed stage name: ${FAILED_STAGE}"
-            }
-        }
             steps {
-                mail bcc: '', body: 'Hello from Jenkins', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
-
+               post {
+                  failure {
+                     echo "Failed stage name: ${FAILED_STAGE}"
+                     mail bcc: '', body: 'Hello from Jenkins Failed stage name: ${FAILED_STAGE}', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
+                }
+              }
             }
-            
         }
 
     }
