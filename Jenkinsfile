@@ -28,5 +28,14 @@ pipeline {
                 bat 'xcopy /s /y "C:/Users/allsh/AppData/Local/Jenkins/.jenkins/workspace/TestPipeline/dist/test-project" "C:/Users/allsh/OneDrive/Desktop/Release"'
             }
         }
+
+        stage('Email'){
+            steps {
+                mail bcc: '', body: 'Hello from Jenkins', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
+
+            }
+            
+        }
+
     }
 }
