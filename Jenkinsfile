@@ -18,6 +18,12 @@ pipeline {
                 }
                 echo 'Testing Project'
                 bat 'ng test --watch=false'
+                post {
+                  failure {
+                     echo "Failed stage name: ${FAILED_STAGE}"
+                     mail bcc: '', body: 'Hello from Jenkins Failed stage name: ${FAILED_STAGE}', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
+                }
+              }
             }
         }
 
