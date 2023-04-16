@@ -28,5 +28,10 @@ pipeline {
                 bat 'xcopy /s /y "C:/Users/allsh/AppData/Local/Jenkins/.jenkins/workspace/TestPipeline/dist/test-project" "C:/Users/allsh/OneDrive/Desktop/Release"'
             }
         }
+
+        post {
+         always {
+           mail to: jenkinstest14@gmail.com , subject: 'TEst'
+           }
     }
 }
