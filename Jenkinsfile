@@ -29,9 +29,5 @@ pipeline {
             }
         }
 
-        post {
-         always {
-           mail to: jenkinstest14@gmail.com , subject: 'TEst'
-           }
     }
 }
