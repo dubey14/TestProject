@@ -11,7 +11,7 @@ pipeline {
         stage('Testing Project'){
             steps {
                 echo 'Testing Project'
-                bat 'ng test --watch=false && echo success || echo Failed'
+                bat 'ng test --watch=false && echo "success" || echo "Failed success"'
             }
         }
 
