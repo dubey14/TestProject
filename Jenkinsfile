@@ -21,6 +21,7 @@ pipeline {
             failure {
                 mail bcc: '', body: 'Stage: "Testing Project" failed!', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
             }
+            }
         }
         
 
@@ -38,6 +39,7 @@ pipeline {
                 mail bcc: '', body: 'Stage: "Building Project" failed!', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
             }
         }
+        }
 
         stage('Deploy Project'){
             steps {
@@ -50,6 +52,7 @@ pipeline {
             }
             failure {
                 mail bcc: '', body: 'Stage: "Deploying Project" failed!', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
+            }
             }
         }
 
