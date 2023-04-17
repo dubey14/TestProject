@@ -1,0 +1,79 @@
+.home img {
+    width: 100%;
+    height: 800px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.homecontent {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.homecontent h1 {
+    color: #ffffff;
+    font-size: 50px;
+}
+
+.homecontent a {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .homecontent {
+        position: absolute;
+        top: 60%;
+        left: 40%;
+    }
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #65F4EB;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    color: #ffffff;
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            #4EB8B1,
+            transparent);
+    transition: all 650ms;
+}
+
+.btn:hover:before {
+    left: 100%;
+}
+
+.home {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url("/assets/test.jpg");  
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.homecontent{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: left;
+}
