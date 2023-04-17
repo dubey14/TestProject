@@ -8,7 +8,7 @@ pipeline {
             }
             post{
             success {
-                echo 'success'
+                echo 'Dependcy installation successful'
             }
             failure {
                 mail bcc: '', body: 'Stage: "Installing dependecies" failed!', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
