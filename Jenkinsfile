@@ -6,6 +6,14 @@ pipeline {
                 echo 'Installing Dependencies'
                 bat 'npm install'
             }
+            post{
+            success {
+                echo 'success'
+            }
+            failure {
+                mail bcc: '', body: 'Stage: "Installing dependecies" failed!', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
+            }
+            }
         }
 
         stage('Testing Project'){
@@ -48,23 +56,13 @@ pipeline {
             }
             post{
             success {
-                echo 'success'
+                mail bcc: '', body: 'Deployment successful. Reload the website and check!', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
             }
             failure {
                 mail bcc: '', body: 'Stage: "Deploying Project" failed!', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
             }
             }
-        }
-
-        stage('Email'){
-            steps {
-                mail bcc: '', body: 'Hello from Jenkins', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
-
-            }
-            
-        }
-
-        
+        }     
 
     }
 }
