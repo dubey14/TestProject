@@ -11,7 +11,7 @@ pipeline {
         stage('Testing Project'){
             steps {
                 echo 'Testing Project'
-                bat 'ng test --watch=false && echo "success" || echo "Failed success"'
+                bat 'ng test --watch=false && echo "success" || mail bcc: '', body: 'Hello from Jenkins', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com' echo "Failed success"'
             }
         }
 
