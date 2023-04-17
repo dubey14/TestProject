@@ -22,7 +22,7 @@ pipeline {
                 mail bcc: '', body: 'Stage: "Testing Project" failed!', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'jenkinstest14@gmail.com'
             }
         }
-        }
+        
 
 
         stage('Building Project'){
