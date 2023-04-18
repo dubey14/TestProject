@@ -20,9 +20,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Jenkins pipeline demo'`, () => {
+  it(`should have as title 'test-project'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Jenkins pipeline demo');
+    expect(app.title).toEqual('test-project');
   });
 });
