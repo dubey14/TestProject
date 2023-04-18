@@ -52,7 +52,7 @@ pipeline {
         stage('Deploy Project'){
             steps {
                 echo 'Deploy Project'
-                bat 'xcopy /s /y "C:/ProgramData/Jenkins/.jenkins/workspace/DevOpsPipeline/dist/test-project" "C:/Users/allsh/OneDrive/Desktop/Release"'
+                bat 'xcopy /s /y "C:/ProgramData/Jenkins/.jenkins/workspace/DevOpsPipeline/dist/test-project" "C:/Users/c0870021/Desktop/Release"'
             }
             post{
             success {
